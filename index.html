@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="description" content="SolucionaYa: calculadoras, conversores y herramientas online gratuitas para resolver problemas rápidamente.">
+  <meta property="og:title" content="SolucionaYa — Resuelve lo que necesitas. En segundos.">
+  <meta property="og:description" content="Calculadoras, conversores y herramientas sencillas para problemas reales.">
+  <meta property="og:type" content="website">
+  <title>SolucionaYa — Herramientas online gratuitas</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="SolucionaYa, inicio">
+      <span class="brand-mark">✦</span>
+      <span>Soluciona<span>Ya</span></span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <a href="#herramientas">Herramientas</a>
+      <a href="#categorias">Categorías</a>
+      <a href="#info">Información</a>
+    </nav>
+
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#herramientas">Herramientas</a>
+    <a href="#categorias">Categorías</a>
+    <a href="#info">Información</a>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-badge"><span></span> Herramientas útiles, sin complicaciones</div>
+      <h1>Resuelve lo que necesitas.<br><em>En segundos.</em></h1>
+      <p class="hero-copy">Calculadoras, conversores y herramientas sencillas para problemas reales.</p>
+
+      <div class="search-shell">
+        <span class="search-icon">⌕</span>
+        <input id="searchInput" type="search" autocomplete="off" placeholder="¿Qué quieres calcular o hacer?" aria-label="Buscar herramientas">
+        <kbd>/</kbd>
+      </div>
+
+      <div class="popular">
+        <span>Popular:</span>
+        <button data-search="porcentaje">Porcentajes</button>
+        <button data-search="descuento">Descuentos</button>
+        <button data-search="edad">Edad</button>
+        <button data-search="iva">IVA</button>
+        <button data-search="media">Media</button>
+      </div>
+
+      <div class="hero-glow"></div>
+    </section>
+
+    <section class="stats">
+      <div><strong>15</strong><span>herramientas</span></div>
+      <div><strong>5</strong><span>categorías</span></div>
+      <div><strong>100%</strong><span>gratuito</span></div>
+    </section>
+
+    <section class="tools-section" id="herramientas">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Todas las herramientas</span>
+          <h2>Hazlo fácil.</h2>
+        </div>
+        <div class="result-count" id="resultCount"></div>
+      </div>
+      <div class="tools-grid" id="toolsGrid"></div>
+      <div class="empty-state hidden" id="emptyState">
+        <div class="empty-icon">⌕</div>
+        <h3>No hemos encontrado esa herramienta</h3>
+        <p>Prueba con otra palabra, como “dinero”, “texto” o “tiempo”.</p>
+      </div>
+    </section>
+
+    <section class="categories-section" id="categorias">
+      <div class="section-heading centered">
+        <span class="eyebrow">Explora por tema</span>
+        <h2>Encuentra tu herramienta.</h2>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <section class="info-section" id="info">
+      <div>
+        <span class="eyebrow">SolucionaYa</span>
+        <h2>Menos vueltas.<br>Más soluciones.</h2>
+      </div>
+      <p>Estamos construyendo una colección de herramientas online rápidas, claras y realmente útiles. Sin registros innecesarios y sin complicaciones.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand"><span class="brand-mark">✦</span> SolucionaYa</div>
+    <p>Herramientas sencillas para problemas reales.</p>
+    <span>© <span id="year"></span> SolucionaYa</span>
+  </footer>
+
+  <div class="tool-overlay hidden" id="toolOverlay" role="dialog" aria-modal="true" aria-labelledby="toolModalTitle">
+    <div class="tool-modal">
+      <button class="modal-close" id="modalClose" aria-label="Cerrar">×</button>
+      <div id="toolModalContent"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
